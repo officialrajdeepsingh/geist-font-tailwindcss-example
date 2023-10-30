@@ -42,7 +42,7 @@ jobs:
         name: Install pnpm
         id: pnpm-install
         with:
-          version: 7
+          version: 8
           run_install: false
 
       - name: Get pnpm store directory
@@ -59,9 +59,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
-      - name: Install dependencies
+      - name: Install dependencies with pnpm
         run: pnpm install
-
       - name: Setup Pages
         uses: actions/configure-pages@v3
         with:
